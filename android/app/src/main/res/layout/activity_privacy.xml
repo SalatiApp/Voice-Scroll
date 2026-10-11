@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:fillViewport="true"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_privacy"
+            android:textColor="@color/text_white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="التزامنا بالخصوصية والأمان بنسبة 100%"
+            android:textColor="@color/primary_light"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. إذن الميكروفون (Microphone)"
+                android:textColor="@color/text_white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:lineSpacingExtra="4dp"
+                android:text="• يُستخدم الميكروفون فقط لتحويل كلامك إلى نص لمطابقة الأوامر (مثل: دوز، رجع، وقف).\n• لا يتم تسجيل أو حفظ أو تخزين أي مقطع صوتي إطلاقاً على ذاكرة الهاتف أو في أي مكان آخر.\n• لا يتم إرسال أي صوت أو نصوص إلى أي خوادم أو سيرفرات خاصة بنا."
+                android:textColor="@color/text_muted"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/divider" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. خدمة إمكانية الوصول (Accessibility Service)"
+                android:textColor="@color/text_white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:lineSpacingExtra="4dp"
+                android:text="• تُستخدم فقط لتنفيذ حركات التمرير (Swipe Up / Swipe Down) في وسط الشاشة عند نطق الأمر.\n• التطبيق لا يقرأ نصوص التطبيقات الأخرى ولا كلمات المرور ولا المحادثات (canRetrieveWindowContent=false).\n• لا يقوم التطبيق بالضغط على أزرار الشراء أو الإعلانات أو المتابعة."
+                android:textColor="@color/text_muted"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/divider" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. لا حسابات ولا تتبع (Zero Analytics)"
+                android:textColor="@color/text_white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:lineSpacingExtra="4dp"
+                android:text="• لا نطلب أي تسجيل دخول أو بريد إلكتروني أو رقم هاتف.\n• لا نستخدم أدوات تتبع أو تحليلات (No Analytics, No Crashlytics, No Ads).\n• التطبيق يعمل بشكل مستقل تماماً ومحلياً على هاتفك."
+                android:textColor="@color/text_muted"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

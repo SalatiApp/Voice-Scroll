@@ -1,0 +1,141 @@
+package com.voicescroll.app
+
+import com.voicescroll.app.engine.ArabicNormalizer
+import com.voicescroll.app.engine.CommandEngine
+import com.voicescroll.app.model.CommandType
+import org.junit.Assert.assertEquals
+import org.junit.Test
+
+class CommandEngineTest {
+
+    @Test
+    fun testNextCommands() {
+        val nextPhrases = listOf(
+            "طلع",
+            "دوز",
+            "next",
+            "التالي",
+            "طلع للفوق",
+            "طلع لفوق",
+            "دوز للفيديو الجاي",
+            "دوز للي بعد",
+            "فوق",
+            "up",
+            "scroll up",
+            "swipe up",
+            "suivant",
+            "monte"
+        )
+        for (phrase in nextPhrases) {
+            val result = CommandEngine.match(phrase)
+            assertEquals("Phrase '$phrase' should match NEXT", CommandType.NEXT, result.command)
+        }
+    }
+
+    @Test
+    fun testPreviousCommands() {
+        val prevPhrases = listOf(
+            "هبط",
+            "رجع",
+            "ارجع",
+            "رجوع",
+            "previous",
+            "back",
+            "السابق",
+            "هبط لتحت",
+            "تحت",
+            "down",
+            "scroll down",
+            "swipe down",
+            "precedent",
+            "descends"
+        )
+        for (phrase in prevPhrases) {
+            val result = CommandEngine.match(phrase)
+            assertEquals("Phrase '$phrase' should match PREVIOUS", CommandType.PREVIOUS, result.command)
+        }
+    }
+
+    @Test
+    fun testStopCommands() {
+        val stopPhrases = listOf(
+            "وقف",
+            "حبس",
+            "صافي",
+            "توقف",
+            "بركة",
+            "stop",
+            "arrete"
+        )
+        for (phrase in stopPhrases) {
+            val result = CommandEngine.match(phrase)
+            assertEquals("Phrase '$phrase' should match STOP", CommandType.STOP, result.command)
+        }
+    }
+
+    @Test
+    fun testNaturalSpeechWithFillerWords() {
+        assertEquals(CommandType.NEXT, CommandEngine.match("عفاك دوز").command)
+        assertEquals(CommandType.NEXT, CommandEngine.match("دوز دابا").command)
+        assertEquals(CommandType.NEXT, CommandEngine.match("طلع دابا").command)
+        assertEquals(CommandType.NEXT, CommandEngine.match("please next").command)
+
+        assertEquals(CommandType.PREVIOUS, CommandEngine.match("رجع دابا").command)
+        assertEquals(CommandType.PREVIOUS, CommandEngine.match("هبط عفاك").command)
+        assertEquals(CommandType.PREVIOUS, CommandEngine.match("go back please").command)
+
+        assertEquals(CommandType.STOP, CommandEngine.match("صافي وقف").command)
+        assertEquals(CommandType.STOP, CommandEngine.match("حبس دابا").command)
+    }
+
+    @Test
+    fun testSpeechWithBackgroundVideoAudio() {
+        // Words with conjunction prefixes ('و', 'ف')
+        assertEquals(CommandType.NEXT, CommandEngine.match("ودوز").command)
+        assertEquals(CommandType.NEXT, CommandEngine.match("فدوز").command)
+        assertEquals(CommandType.NEXT, CommandEngine.match("وطلع").command)
+        assertEquals(CommandType.PREVIOUS, CommandEngine.match("وهبط").command)
+        assertEquals(CommandType.PREVIOUS, CommandEngine.match("ورجع").command)
+        assertEquals(CommandType.STOP, CommandEngine.match("ووقف").command)
+
+        // Elongated words when speaking loudly over media audio
+        assertEquals(CommandType.NEXT, CommandEngine.match("دووووز").command)
+        assertEquals(CommandType.NEXT, CommandEngine.match("ططلع").command)
+        assertEquals(CommandType.STOP, CommandEngine.match("صااافي").command)
+
+        // Command spoken inside video dialogue sentence
+        assertEquals(CommandType.NEXT, CommandEngine.match("شوف هاد الفيديو دوز دابا").command)
+        assertEquals(CommandType.PREVIOUS, CommandEngine.match("هاد اللقطة زوينة رجع").command)
+    }
+
+    @Test
+    fun testCoreCommandsExplicitly() {
+        // Issue 4: "طلع", "هبط", "دوز", "رجع" and "وقف"
+        assertEquals(CommandType.NEXT, CommandEngine.match("طلع").command)
+        assertEquals(CommandType.NEXT, CommandEngine.match("طالع").command)
+        assertEquals(CommandType.NEXT, CommandEngine.match("اطلع").command)
+        assertEquals(CommandType.NEXT, CommandEngine.match("دوز").command)
+        assertEquals(CommandType.NEXT, CommandEngine.match("دووز").command)
+        assertEquals(CommandType.NEXT, CommandEngine.match("سير").command)
+
+        assertEquals(CommandType.PREVIOUS, CommandEngine.match("هبط").command)
+        assertEquals(CommandType.PREVIOUS, CommandEngine.match("هابط").command)
+        assertEquals(CommandType.PREVIOUS, CommandEngine.match("اهبط").command)
+        assertEquals(CommandType.PREVIOUS, CommandEngine.match("رجع").command)
+        assertEquals(CommandType.PREVIOUS, CommandEngine.match("ارجع").command)
+        assertEquals(CommandType.PREVIOUS, CommandEngine.match("رجّع").command)
+
+        assertEquals(CommandType.STOP, CommandEngine.match("وقف").command)
+        assertEquals(CommandType.STOP, CommandEngine.match("وقّف").command)
+        assertEquals(CommandType.STOP, CommandEngine.match("حبس").command)
+        assertEquals(CommandType.STOP, CommandEngine.match("صافي").command)
+    }
+
+    @Test
+    fun testArabicNormalizer() {
+        assertEquals("طلع", ArabicNormalizer.normalize("طَلَعَ"))
+        assertEquals("هبط", ArabicNormalizer.normalize("هَبِّطْ"))
+        assertEquals("ارجع", ArabicNormalizer.normalize("إِرْجَعْ"))
+        assertEquals("next", ArabicNormalizer.normalize("  Next!  "))
+    }
+}

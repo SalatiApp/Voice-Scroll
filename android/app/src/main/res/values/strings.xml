@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name">Voice Scroll</string>
+    <string name="accessibility_service_label">Voice Scroll</string>
+    <string name="accessibility_service_summary">التمرير التلقائي بالأوامر الصوتية</string>
+    <string name="accessibility_service_description">تسمح لـ Voice Scroll بتنفيذ حركات التمرير (Swipe Up / Down) على الشاشة استجابة لأوامرك الصوتية فقط. لا تقرأ هذه الخدمة أي نصوص أو محتوى شخصي، ولا تراقب تطبيقاتك، ولا تجمع أي بيانات نهائياً.</string>
+
+    <!-- Main Activity -->
+    <string name="status_stopped">التحكم الصوتي متوقف</string>
+    <string name="status_running">التحكم الصوتي يعمل</string>
+    <string name="status_listening">يستمع إلى صوتك…</string>
+    <string name="status_command_recognized">تم التعرف على: %1$s</string>
+    <string name="status_gesture_dispatched">تم تنفيذ التمرير: %1$s</string>
+    <string name="status_error">خطأ: %1$s</string>
+    <string name="status_not_understood">لم أفهم الأمر، حاول ثانية</string>
+
+    <string name="btn_start_voice_control">تشغيل التحكم الصوتي</string>
+    <string name="btn_stop_voice_control">إيقاف التحكم الصوتي</string>
+
+    <string name="accessibility_enabled">خدمة إمكانية الوصول: مفعلة ✓</string>
+    <string name="accessibility_disabled">خدمة إمكانية الوصول: غير مفعلة ✗</string>
+    <string name="btn_enable_accessibility">فتح إعدادات إمكانية الوصول</string>
+    <string name="msg_accessibility_required">لتشغيل التحكم الصوتي، يجب السماح لـ Voice Scroll بخدمة إمكانية الوصول.</string>
+
+    <string name="permission_mic_required">Voice Scroll يحتاج إلى إذن الميكروفون للتعرف على أوامرك الصوتية محلياً على جهازك فقط دون تسجيل أو تخزين.</string>
+    <string name="btn_grant_mic_permission">منح إذن الميكروفون</string>
+    <string name="mic_permission_denied">تم رفض إذن الميكروفون. يرجى تفعيله من إعدادات التطبيق.</string>
+
+    <string name="command_language_label">لغة الأوامر:</string>
+    <string name="basic_commands_title">الأوامر الأساسية</string>
+    <string name="cmd_next_label">التالي (Swipe Up): دوز، التالي، طلع، next</string>
+    <string name="cmd_prev_label">السابق (Swipe Down): رجع، السابق، هبط، back</string>
+    <string name="cmd_stop_label">توقف: وقف، حبس، صافي، stop</string>
+    <string name="cmd_resume_label">متابعة: كمل، تابع، ابدأ، resume</string>
+
+    <string name="quick_guide_title">طريقة الاستخدام السريعة</string>
+    <string name="quick_guide_step1">1. فعّل خدمة إمكانية الوصول وامنح إذن الميكروفون.</string>
+    <string name="quick_guide_step2">2. اضغط على "تشغيل التحكم الصوتي".</string>
+    <string name="quick_guide_step3">3. افتح أي تطبيق فيديو (TikTok, YouTube, Instagram, Facebook).</string>
+    <string name="quick_guide_step4">4. قل "دوز" أو "التالي" للانتقال للفيديو التالي، أو "رجع" للعودة.</string>
+
+    <!-- Navigation / Titles -->
+    <string name="title_test_voice">اختبار الأوامر الصوتية</string>
+    <string name="title_settings">الإعدادات</string>
+    <string name="title_custom_aliases">تخصيص الأوامر الصوتية</string>
+    <string name="title_privacy">سياسة الخصوصية</string>
+    <string name="title_about">حول Voice Scroll</string>
+
+    <!-- Test Voice -->
+    <string name="test_voice_instructions">تحدث هنا لاختبار مدى استجابة الأوامر الصوتية لديك. لن يتم تنفيذ أي تمرير (Swipe) فعلي في شاشة الاختبار.</string>
+    <string name="test_voice_recognized_title">النص الذي تم التعرف عليه:</string>
+    <string name="test_voice_matched_cmd">الأمر المطابق:</string>
+    <string name="test_voice_none">لا يوجد</string>
+
+    <!-- Settings -->
+    <string name="settings_voice_active">تفعيل التحكم الصوتي</string>
+    <string name="settings_command_language">لغة الأوامر</string>
+    <string name="settings_swipe_speed">سرعة التمرير (المدة بالملي ثانية)</string>
+    <string name="settings_cooldown">فترة منع التكرار السريع (ملي ثانية)</string>
+    <string name="settings_custom_aliases_desc">أضف كلماتك ولهجتك الخاصة للأوامر</string>
+    <string name="settings_test_mic">اختبار الميكروفون والأوامر</string>
+    <string name="settings_accessibility_status">حالة إمكانية الوصول (Accessibility)</string>
+    <string name="settings_privacy_policy">سياسة الخصوصية</string>
+    <string name="settings_about_app">حول التطبيق</string>
+
+    <!-- Custom Aliases -->
+    <string name="custom_aliases_empty">لا توجد كلمات مخصصة مضافة حالياً. اضغط على (+) لإضافة كلمتك الخاصة.</string>
+    <string name="dialog_add_alias_title">إضافة كلمة مخصصة جديدة</string>
+    <string name="hint_alias_word">الكلمة أو العبارة (مثال: يلا)</string>
+    <string name="target_command_label">الأمر المستهدف:</string>
+    <string name="btn_add">إضافة</string>
+    <string name="btn_cancel">إلغاء</string>
+    <string name="btn_delete">حذف</string>
+    <string name="alias_saved">تم حفظ الكلمة المخصصة بنجاح</string>
+    <string name="alias_deleted">تم حذف الكلمة المخصصة</string>
+    <string name="err_empty_alias">يرجى كتابة الكلمة أو العبارة</string>
+
+    <!-- Notification -->
+    <string name="notification_channel_name">خدمة Voice Scroll الصوتية</string>
+    <string name="notification_channel_desc">إشعار تشغيل خدمة الاستماع للأوامر الصوتية</string>
+    <string name="notification_running_title">Voice Scroll يعمل في الخلفية</string>
+    <string name="notification_running_text">يستمع إلى أوامرك (دوز، رجع، وقف، كمل…)</string>
+
+    <!-- About -->
+    <string name="about_app_description">Voice Scroll هو تطبيق مجاني للتحكم في التمرير داخل تطبيقات الفيديو القصيرة (TikTok, YouTube, Instagram, Facebook) باستخدام أوامر صوتية محلية سريعة ودون الحاجة لأي ذكاء اصطناعي أو اتصال بخوادم خارجية.</string>
+    <string name="developer_name">Mohamed Harbaj</string>
+    <string name="version_label">الإصدار 1.0.0</string>
+    <string name="developer_label">المطور: Mohamed Harbaj</string>
+</resources>

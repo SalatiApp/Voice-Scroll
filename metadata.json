@@ -1,0 +1,8 @@
+{
+  "name": "Voice Scroll",
+  "description": "تطبيق Android للتحكم في التمرير في تطبيقات الفيديو (TikTok, YouTube, Instagram, Facebook) عبر الأوامر الصوتية المحلية وبدون أي ذكاء اصطناعي",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

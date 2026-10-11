@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cyan / Turquoise accent matching reference design -->
+    <color name="primary">#00D7F4</color>
+    <color name="primary_dark">#00B4CC</color>
+    <color name="primary_light">#33E0F7</color>
+    
+    <!-- Accent colors for status and icons -->
+    <color name="accent">#00D7F4</color>
+    <color name="accent_green">#10B981</color>
+    <color name="accent_red">#FF2A51</color>
+    <color name="accent_amber">#F59E0B</color>
+    <color name="accent_blue">#1877F2</color>
+
+    <!-- Deep dark navy backgrounds from reference -->
+    <color name="bg_dark">#060B13</color>
+    <color name="bg_dark_card">#0B1424</color>
+    <color name="bg_dark_elevated">#111E36</color>
+    <color name="card_border">#162740</color>
+    <color name="capsule_bg">#091526</color>
+    
+    <!-- Typography -->
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_muted">#8FA0B5</color>
+    <color name="text_cyan">#00D7F4</color>
+    <color name="divider">#162740</color>
+</resources>
