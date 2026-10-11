@@ -82,7 +82,6 @@ class MainActivity : Activity() {
 
     private fun setupListeners() {
         btnToggleVoice.setOnClickListener {
-            // Immediate state toggle with 0 delay
             val isCurrentRunning = VoiceScrollForegroundService.isRunning || prefsManager.isVoiceControlActive
             if (isCurrentRunning) {
                 stopVoiceControl()
